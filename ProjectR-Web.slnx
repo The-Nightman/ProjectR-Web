@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="projectr-web.client/projectr-web.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="ProjectR-Web.Server/ProjectR-Web.Server.csproj" />
+</Solution>
