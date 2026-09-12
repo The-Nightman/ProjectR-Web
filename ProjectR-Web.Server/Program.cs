@@ -40,4 +40,19 @@ app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<DatabaseContext>();
+    try
+    {
+        await SeedData.SeedDatabase(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred during migration");
+    }
+}
+
 app.Run();

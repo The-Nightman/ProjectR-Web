@@ -1,0 +1,2504 @@
+﻿[
+  {
+    "Name": "Open Health",
+    "CreatedAt": -730,
+    "issues": [
+      {
+        "Name": "Appointment Daylight savings",
+        "Description": "Appointments show wrong datetime when crossing daylight savings",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": 0,
+        "CreatedAt": -3,
+        "Changes": [
+          {
+            "ChangeHash": "brother-clearly-snow",
+            "Name": "Refactor database datetime to utc conversion",
+            "Description": "Refactor database datetime to utc conversion",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "happy-poetry-shout",
+            "Name": "Parse datetime from db",
+            "Description": "Properly parse datetime upon collection database through query",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "die-port-left",
+            "Name": "Update frontend",
+            "Description": "Update frontend to reflect accurate datetime accounting for dst",
+            "CreatedAt": -1
+          },
+          {
+            "ChangeHash": "test-dst-cases",
+            "Name": "Add comprehensive DST test cases",
+            "Description": "Create test suite covering all DST edge cases",
+            "CreatedAt": -1
+          },
+          {
+            "ChangeHash": "validate-timezone",
+            "Name": "Add timezone validation",
+            "Description": "Validate timezone data consistency across the system",
+            "CreatedAt": 0
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Patient login failure on iOS",
+        "Description": "Some iOS users are unable to log in after the 2FA rollout",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -1,
+        "CreatedAt": -12,
+        "Changes": [
+          {
+            "ChangeHash": "quiet-forest-47",
+            "Name": "Rollback 2FA client-side changes",
+            "Description": "Temporarily rollback the iOS client 2FA changes that caused failures",
+            "CreatedAt": -10
+          },
+          {
+            "ChangeHash": "ios-debug-logs",
+            "Name": "Add detailed logging for iOS auth flow",
+            "Description": "Implement comprehensive logging to diagnose the root cause",
+            "CreatedAt": -9
+          },
+          {
+            "ChangeHash": "device-fingerprint",
+            "Name": "Update device fingerprinting logic",
+            "Description": "Fix device identification for iOS 16+ devices",
+            "CreatedAt": -7
+          },
+          {
+            "ChangeHash": "token-validation",
+            "Name": "Improve token validation",
+            "Description": "Add grace period for time-based token validation",
+            "CreatedAt": -5
+          },
+          {
+            "ChangeHash": "silent-river-11",
+            "Name": "Patch 2FA flow",
+            "Description": "Fix edge-case when device time is skewed and 2FA tokens are rejected",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "test-coverage-2fa",
+            "Name": "Add integration tests for 2FA",
+            "Description": "Create comprehensive test suite for all 2FA scenarios",
+            "CreatedAt": -1
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Medication interaction alert missing",
+        "Description": "Interaction alerts between some prescriptions are not displayed",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -2,
+        "CreatedAt": -20,
+        "Changes": [
+          {
+            "ChangeHash": "sharp-ocean-92",
+            "Name": "Update drug interaction ruleset",
+            "Description": "Refresh third-party interactions dataset and mapping rules",
+            "CreatedAt": -15
+          },
+          {
+            "ChangeHash": "audit-interactions",
+            "Name": "Audit existing interaction rules",
+            "Description": "Review all interaction rules for completeness",
+            "CreatedAt": -12
+          },
+          {
+            "ChangeHash": "add-severity-levels",
+            "Name": "Add interaction severity levels",
+            "Description": "Categorize interactions by severity for better alerts",
+            "CreatedAt": -8
+          },
+          {
+            "ChangeHash": "mellow-sky-05",
+            "Name": "Add missing mapping for compound names",
+            "Description": "Map alternate drug names to canonical identifiers",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "test-alert-display",
+            "Name": "Test alert display mechanism",
+            "Description": "Verify alerts show properly in all scenarios",
+            "CreatedAt": -2
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Lab results sync failures",
+        "Description": "Periodic failures when syncing lab results from external provider",
+        "Severity": "Medium",
+        "Status": "Investigating",
+        "LastUpdated": -4,
+        "CreatedAt": -30,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-sync-failures",
+            "Name": "Analyze sync failure patterns",
+            "Description": "Investigate root cause of periodic failures",
+            "CreatedAt": -28
+          },
+          {
+            "ChangeHash": "add-monitoring",
+            "Name": "Add sync monitoring dashboard",
+            "Description": "Create real-time monitoring for sync status",
+            "CreatedAt": -25
+          },
+          {
+            "ChangeHash": "timeout-config",
+            "Name": "Adjust API timeout settings",
+            "Description": "Increase timeout for large result sets",
+            "CreatedAt": -20
+          },
+          {
+            "ChangeHash": "granite-hill-66",
+            "Name": "Retry logic for lab sync",
+            "Description": "Implement exponential backoff and idempotent writes for lab sync",
+            "CreatedAt": -5
+          },
+          {
+            "ChangeHash": "validate-results",
+            "Name": "Add result validation",
+            "Description": "Validate synced results for data integrity",
+            "CreatedAt": -4
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "UI accessibility issues in patient dashboard",
+        "Description": "Screen reader labels missing and low contrast in critical areas",
+        "Severity": "Low",
+        "Status": "Investigating",
+        "LastUpdated": -7,
+        "CreatedAt": -40,
+        "Changes": [
+          {
+            "ChangeHash": "accessibility-audit",
+            "Name": "Conduct accessibility audit",
+            "Description": "Run WCAG 2.1 compliance audit on patient dashboard",
+            "CreatedAt": -35
+          },
+          {
+            "ChangeHash": "screen-reader-test",
+            "Name": "Test with screen readers",
+            "Description": "Test dashboard with JAWS and NVDA screen readers",
+            "CreatedAt": -30
+          },
+          {
+            "ChangeHash": "contrast-fixes",
+            "Name": "Fix contrast ratios",
+            "Description": "Update color palette to meet WCAG AA standards",
+            "CreatedAt": -20
+          },
+          {
+            "ChangeHash": "keyboard-navigation",
+            "Name": "Improve keyboard navigation",
+            "Description": "Ensure all interactive elements are keyboard accessible",
+            "CreatedAt": -15
+          },
+          {
+            "ChangeHash": "amber-lamp-23",
+            "Name": "Add ARIA labels",
+            "Description": "Add missing ARIA attributes and improve color contrast for buttons",
+            "CreatedAt": -6
+          },
+          {
+            "ChangeHash": "focus-indicators",
+            "Name": "Add visible focus indicators",
+            "Description": "Add clear focus indicators for keyboard users",
+            "CreatedAt": -7
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Database connection pool exhaustion",
+        "Description": "Application frequently runs out of database connections during peak hours",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -45,
+        "CreatedAt": -650,
+        "Changes": [
+          {
+            "ChangeHash": "monitor-pool-usage",
+            "Name": "Add connection pool monitoring",
+            "Description": "Implement metrics for tracking pool usage patterns",
+            "CreatedAt": -650
+          },
+          {
+            "ChangeHash": "identify-leaks",
+            "Name": "Identify connection leaks",
+            "Description": "Analyze code to find services not releasing connections",
+            "CreatedAt": -649
+          },
+          {
+            "ChangeHash": "azure-pool-88",
+            "Name": "Increase connection pool size",
+            "Description": "Increase max pool size and implement connection timeout monitoring",
+            "CreatedAt": -648
+          },
+          {
+            "ChangeHash": "deep-water-33",
+            "Name": "Fix connection leak in report service",
+            "Description": "Ensure connections are properly released after generating reports",
+            "CreatedAt": -646
+          },
+          {
+            "ChangeHash": "billing-leak-fix",
+            "Name": "Fix billing service leak",
+            "Description": "Patch connection leak in billing calculation module",
+            "CreatedAt": -645
+          },
+          {
+            "ChangeHash": "load-test-pool",
+            "Name": "Load test connection pool",
+            "Description": "Verify pool handles peak load correctly",
+            "CreatedAt": -644
+          },
+          {
+            "ChangeHash": "alert-threshold",
+            "Name": "Add alerting for pool usage",
+            "Description": "Create alerts when pool usage exceeds 80%",
+            "CreatedAt": -643
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Patient record search returning stale data",
+        "Description": "Search results sometimes show outdated patient information",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -120,
+        "CreatedAt": -550,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-search-lag",
+            "Name": "Analyze search indexing lag",
+            "Description": "Measure time between updates and search index refresh",
+            "CreatedAt": -548
+          },
+          {
+            "ChangeHash": "review-cache-strategy",
+            "Name": "Review caching strategy",
+            "Description": "Audit current caching implementation for issues",
+            "CreatedAt": -545
+          },
+          {
+            "ChangeHash": "fresh-index-42",
+            "Name": "Rebuild search index infrastructure",
+            "Description": "Migrate to real-time indexing with proper cache invalidation",
+            "CreatedAt": -540
+          },
+          {
+            "ChangeHash": "test-realtime-index",
+            "Name": "Test real-time indexing",
+            "Description": "Verify new indexing system updates immediately",
+            "CreatedAt": -538
+          },
+          {
+            "ChangeHash": "crystal-cache-77",
+            "Name": "Add cache busting on patient updates",
+            "Description": "Invalidate search cache immediately when patient records change",
+            "CreatedAt": -535
+          },
+          {
+            "ChangeHash": "monitor-cache-hits",
+            "Name": "Add cache hit rate monitoring",
+            "Description": "Track cache effectiveness and staleness metrics",
+            "CreatedAt": -530
+          },
+          {
+            "ChangeHash": "deploy-production",
+            "Name": "Deploy to production",
+            "Description": "Roll out new search infrastructure to production",
+            "CreatedAt": -525
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Prescription refill workflow broken",
+        "Description": "Patients unable to request prescription refills through patient portal",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -200,
+        "CreatedAt": -450,
+        "Changes": [
+          {
+            "ChangeHash": "trace-refill-requests",
+            "Name": "Add request tracing",
+            "Description": "Implement distributed tracing for refill requests",
+            "CreatedAt": -448
+          },
+          {
+            "ChangeHash": "medicine-flow-19",
+            "Name": "Fix API gateway routing",
+            "Description": "Correct routing rules for prescription service endpoints",
+            "CreatedAt": -445
+          },
+          {
+            "ChangeHash": "test-gateway-routes",
+            "Name": "Test gateway routing",
+            "Description": "Verify all prescription endpoints route correctly",
+            "CreatedAt": -443
+          },
+          {
+            "ChangeHash": "pharmacy-integration",
+            "Name": "Fix pharmacy integration",
+            "Description": "Resolve issues with pharmacy system integration",
+            "CreatedAt": -440
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Email notifications delayed by hours",
+        "Description": "Appointment reminders and other email notifications arrive late",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -310,
+        "CreatedAt": -380,
+        "Changes": [
+          {
+            "ChangeHash": "profile-email-queue",
+            "Name": "Profile email queue performance",
+            "Description": "Identify bottlenecks in email processing",
+            "CreatedAt": -378
+          },
+          {
+            "ChangeHash": "swift-mail-66",
+            "Name": "Optimize email queue processing",
+            "Description": "Implement parallel processing and increase worker threads",
+            "CreatedAt": -375
+          },
+          {
+            "ChangeHash": "test-parallel-send",
+            "Name": "Test parallel sending",
+            "Description": "Verify parallel processing improves throughput",
+            "CreatedAt": -373
+          },
+          {
+            "ChangeHash": "priority-send-22",
+            "Name": "Add priority queue for critical notifications",
+            "Description": "Separate critical notifications into high-priority queue",
+            "CreatedAt": -370
+          },
+          {
+            "ChangeHash": "monitor-send-times",
+            "Name": "Add send time monitoring",
+            "Description": "Track email send times to ensure SLA compliance",
+            "CreatedAt": -368
+          },
+          {
+            "ChangeHash": "load-test-email",
+            "Name": "Load test email system",
+            "Description": "Verify system handles peak load",
+            "CreatedAt": -365
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Insurance verification API timeout",
+        "Description": "Third-party insurance verification frequently times out",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -280,
+        "CreatedAt": -300,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-timeout-pattern",
+            "Name": "Analyze timeout patterns",
+            "Description": "Investigate when and why timeouts occur",
+            "CreatedAt": -298
+          },
+          {
+            "ChangeHash": "insurance-retry-55",
+            "Name": "Implement circuit breaker pattern",
+            "Description": "Add circuit breaker to prevent cascade failures from insurance API",
+            "CreatedAt": -295
+          },
+          {
+            "ChangeHash": "test-circuit-breaker",
+            "Name": "Test circuit breaker",
+            "Description": "Verify circuit breaker trips appropriately",
+            "CreatedAt": -293
+          },
+          {
+            "ChangeHash": "fallback-verify-11",
+            "Name": "Add fallback verification method",
+            "Description": "Implement manual review queue when API is unavailable",
+            "CreatedAt": -290
+          },
+          {
+            "ChangeHash": "contact-insurance-provider",
+            "Name": "Contact insurance API provider",
+            "Description": "Work with vendor to improve API reliability",
+            "CreatedAt": -288
+          },
+          {
+            "ChangeHash": "cache-verification-results",
+            "Name": "Cache verification results",
+            "Description": "Implement caching to reduce API calls",
+            "CreatedAt": -285
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Billing report calculation errors",
+        "Description": "Monthly billing reports showing incorrect totals for some providers",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -150,
+        "CreatedAt": -220,
+        "Changes": [
+          {
+            "ChangeHash": "investigate-discrepancies",
+            "Name": "Investigate billing discrepancies",
+            "Description": "Identify which calculations are producing errors",
+            "CreatedAt": -218
+          },
+          {
+            "ChangeHash": "accurate-sum-99",
+            "Name": "Fix decimal precision in billing calculations",
+            "Description": "Use proper decimal types to prevent rounding errors",
+            "CreatedAt": -215
+          },
+          {
+            "ChangeHash": "unit-test-billing",
+            "Name": "Add billing calculation unit tests",
+            "Description": "Create comprehensive test suite for all billing scenarios",
+            "CreatedAt": -213
+          },
+          {
+            "ChangeHash": "audit-trail-44",
+            "Name": "Add billing calculation audit trail",
+            "Description": "Log all calculation steps for debugging and compliance",
+            "CreatedAt": -210
+          },
+          {
+            "ChangeHash": "validate-historical",
+            "Name": "Validate historical reports",
+            "Description": "Check past reports for accuracy and generate corrections",
+            "CreatedAt": -208
+          },
+          {
+            "ChangeHash": "deploy-billing-fix",
+            "Name": "Deploy billing fixes",
+            "Description": "Roll out corrected billing calculation logic",
+            "CreatedAt": -205
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Mobile app logout loop",
+        "Description": "Some users experience automatic logout loop on mobile app",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -90,
+        "CreatedAt": -150,
+        "Changes": [
+          {
+            "ChangeHash": "reproduce-logout-loop",
+            "Name": "Reproduce logout loop",
+            "Description": "Identify conditions that trigger the logout loop",
+            "CreatedAt": -148
+          },
+          {
+            "ChangeHash": "session-stable-77",
+            "Name": "Fix session token refresh logic",
+            "Description": "Prevent race condition in token refresh mechanism",
+            "CreatedAt": -145
+          },
+          {
+            "ChangeHash": "add-refresh-lock",
+            "Name": "Add token refresh locking",
+            "Description": "Implement mutex to prevent concurrent refresh attempts",
+            "CreatedAt": -143
+          },
+          {
+            "ChangeHash": "test-concurrent-requests",
+            "Name": "Test concurrent API requests",
+            "Description": "Verify token refresh works with multiple simultaneous requests",
+            "CreatedAt": -140
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Document upload size limit too restrictive",
+        "Description": "Users cannot upload medical documents larger than 5MB",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -50,
+        "CreatedAt": -80,
+        "Changes": [
+          {
+            "ChangeHash": "survey-document-sizes",
+            "Name": "Survey typical document sizes",
+            "Description": "Analyze user document sizes to determine appropriate limit",
+            "CreatedAt": -78
+          },
+          {
+            "ChangeHash": "large-file-88",
+            "Name": "Increase upload size limit to 25MB",
+            "Description": "Update server and client-side validation for larger files",
+            "CreatedAt": -75
+          },
+          {
+            "ChangeHash": "update-storage",
+            "Name": "Update storage infrastructure",
+            "Description": "Ensure storage can handle larger files efficiently",
+            "CreatedAt": -73
+          },
+          {
+            "ChangeHash": "compress-smart-33",
+            "Name": "Add client-side image compression",
+            "Description": "Automatically compress images before upload to reduce size",
+            "CreatedAt": -70
+          },
+          {
+            "ChangeHash": "test-large-uploads",
+            "Name": "Test large file uploads",
+            "Description": "Verify system handles 25MB uploads reliably",
+            "CreatedAt": -68
+          },
+          {
+            "ChangeHash": "monitor-upload-success",
+            "Name": "Monitor upload success rates",
+            "Description": "Track upload completion rates after changes",
+            "CreatedAt": -65
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Telehealth video call quality issues",
+        "Description": "Video quality degrades significantly during telehealth appointments",
+        "Severity": "Critical",
+        "Status": "In Review",
+        "LastUpdated": -15,
+        "CreatedAt": -100,
+        "Changes": [
+          {
+            "ChangeHash": "diagnose-video-issues",
+            "Name": "Diagnose video quality issues",
+            "Description": "Analyze network conditions and codec performance",
+            "CreatedAt": -98
+          },
+          {
+            "ChangeHash": "optimize-codec",
+            "Name": "Optimize video codec settings",
+            "Description": "Adjust codec parameters for better quality at low bandwidth",
+            "CreatedAt": -95
+          },
+          {
+            "ChangeHash": "adaptive-bitrate-video",
+            "Name": "Implement adaptive bitrate",
+            "Description": "Dynamically adjust video quality based on connection speed",
+            "CreatedAt": -90
+          },
+          {
+            "ChangeHash": "add-connection-test",
+            "Name": "Add pre-call connection test",
+            "Description": "Test connection quality before starting appointment",
+            "CreatedAt": -85
+          },
+          {
+            "ChangeHash": "fallback-audio-only",
+            "Name": "Add audio-only fallback",
+            "Description": "Allow switching to audio-only mode if video fails",
+            "CreatedAt": -80
+          },
+          {
+            "ChangeHash": "test-various-networks",
+            "Name": "Test on various network conditions",
+            "Description": "Verify improvements work across different connection types",
+            "CreatedAt": -75
+          },
+          {
+            "ChangeHash": "collect-feedback",
+            "Name": "Collect user feedback",
+            "Description": "Gather feedback from providers and patients on video quality",
+            "CreatedAt": -70
+          },
+          {
+            "ChangeHash": "fine-tune-settings",
+            "Name": "Fine-tune based on feedback",
+            "Description": "Adjust settings based on real-world usage data",
+            "CreatedAt": -65
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Patient portal SSO integration failing",
+        "Description": "Single sign-on from partner portals frequently fails",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -400,
+        "CreatedAt": -600,
+        "Changes": [
+          {
+            "ChangeHash": "investigate-sso-failures",
+            "Name": "Investigate SSO failure patterns",
+            "Description": "Analyze logs to identify common failure scenarios",
+            "CreatedAt": -598
+          },
+          {
+            "ChangeHash": "update-saml-config",
+            "Name": "Update SAML configuration",
+            "Description": "Correct SAML assertion validation rules",
+            "CreatedAt": -595
+          },
+          {
+            "ChangeHash": "fix-certificate-validation",
+            "Name": "Fix certificate validation",
+            "Description": "Update certificate chain validation logic",
+            "CreatedAt": -590
+          },
+          {
+            "ChangeHash": "add-sso-logging",
+            "Name": "Add detailed SSO logging",
+            "Description": "Implement comprehensive logging for SSO flow",
+            "CreatedAt": -585
+          },
+          {
+            "ChangeHash": "test-all-partners",
+            "Name": "Test SSO with all partners",
+            "Description": "Verify SSO works correctly with each partner system",
+            "CreatedAt": -580
+          },
+          {
+            "ChangeHash": "handle-clock-skew",
+            "Name": "Handle clock skew",
+            "Description": "Add tolerance for time differences between systems",
+            "CreatedAt": -575
+          },
+          {
+            "ChangeHash": "deploy-sso-fixes",
+            "Name": "Deploy SSO fixes",
+            "Description": "Roll out SSO improvements to production",
+            "CreatedAt": -570
+          },
+          {
+            "ChangeHash": "monitor-sso-success",
+            "Name": "Monitor SSO success rates",
+            "Description": "Track SSO success rates post-deployment",
+            "CreatedAt": -565
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Appointment reminder SMS not sent",
+        "Description": "SMS appointment reminders failing for some phone numbers",
+        "Severity": "Medium",
+        "Status": "In Review",
+        "LastUpdated": -350,
+        "CreatedAt": -420,
+        "Changes": [
+          {
+            "ChangeHash": "identify-failed-numbers",
+            "Name": "Identify failed phone numbers",
+            "Description": "Analyze which phone number formats are failing",
+            "CreatedAt": -418
+          },
+          {
+            "ChangeHash": "fix-number-validation",
+            "Name": "Fix phone number validation",
+            "Description": "Update regex to handle all valid phone formats",
+            "CreatedAt": -415
+          },
+          {
+            "ChangeHash": "add-international-support",
+            "Name": "Add international number support",
+            "Description": "Support international phone number formats",
+            "CreatedAt": -410
+          },
+          {
+            "ChangeHash": "retry-failed-sms",
+            "Name": "Add retry logic for failed SMS",
+            "Description": "Implement automatic retry for failed SMS sends",
+            "CreatedAt": -405
+          },
+          {
+            "ChangeHash": "switch-sms-provider",
+            "Name": "Evaluate alternative SMS providers",
+            "Description": "Test backup SMS provider for reliability",
+            "CreatedAt": -400
+          },
+          {
+            "ChangeHash": "test-sms-delivery",
+            "Name": "Test SMS delivery rates",
+            "Description": "Verify SMS delivery across all number types",
+            "CreatedAt": -395
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Smart Wallet",
+    "CreatedAt": -365,
+    "issues": [
+      {
+        "Name": "Transaction double-charge",
+        "Description": "Users report being charged twice for a single payment",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -1,
+        "CreatedAt": -8,
+        "Changes": [
+          {
+            "ChangeHash": "fast-coin-81",
+            "Name": "Add idempotency keys",
+            "Description": "Introduce idempotency keys to prevent duplicate charges on retries",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-1",
+            "Name": "Implement duplicate detection",
+            "Description": "Add logic to detect duplicate transactions in real-time",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-2",
+            "Name": "Add duplicate alerts",
+            "Description": "Alert when duplicate transactions are detected",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-3",
+            "Name": "Test duplicate detection",
+            "Description": "Test detection with various payment scenarios",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-4",
+            "Name": "Monitor false positives",
+            "Description": "Ensure legitimate duplicate payments are allowed",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-5",
+            "Name": "Add detection logging",
+            "Description": "Log all duplicate detection events for analysis",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-6",
+            "Name": "Database transaction consistency",
+            "Description": "Ensure database enforces transaction uniqueness",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "dup-detect-7",
+            "Name": "Add circuit breaker",
+            "Description": "Implement circuit breaker for payment service",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "refund-auto-1",
+            "Name": "Automate refund processing",
+            "Description": "Automatically process refunds for detected duplicates",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "refund-auto-2",
+            "Name": "Add refund verification",
+            "Description": "Verify refunds reach user accounts correctly",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "refund-auto-3",
+            "Name": "Test refund flow",
+            "Description": "Test end-to-end refund processing",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "refund-auto-4",
+            "Name": "Add refund status tracking",
+            "Description": "Track refund status from initiation to completion",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "refund-auto-5",
+            "Name": "Implement refund notifications",
+            "Description": "Notify users when refunds are processed",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "refund-auto-6",
+            "Name": "Add refund audit trail",
+            "Description": "Log all refund operations for compliance",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "retry-logic-1",
+            "Name": "Fix retry logic",
+            "Description": "Ensure retries use idempotency keys properly",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "retry-logic-2",
+            "Name": "Add retry backoff",
+            "Description": "Implement exponential backoff for retries",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "retry-logic-3",
+            "Name": "Test retry scenarios",
+            "Description": "Test with various network failure scenarios",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "calm-wallet-02",
+            "Name": "Reconcile historical duplicates",
+            "Description": "Run reconciliation and issue refunds where necessary",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "hist-audit-1",
+            "Name": "Audit historical transactions",
+            "Description": "Review past transactions for undetected duplicates",
+            "CreatedAt": -1
+          },
+          {
+            "ChangeHash": "hist-audit-2",
+            "Name": "Issue compensatory credits",
+            "Description": "Provide credits to affected users",
+            "CreatedAt": -1
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Mobile crash on launch (Android 12)",
+        "Description": "App crashes on some Android 12 devices during cold start",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": 0,
+        "CreatedAt": -15,
+        "Changes": [
+          {
+            "ChangeHash": "debug-crash-1",
+            "Name": "Enable crash reporting",
+            "Description": "Enable detailed crash logs for Android 12",
+            "CreatedAt": -13
+          },
+          {
+            "ChangeHash": "debug-crash-2",
+            "Name": "Analyze crash dumps",
+            "Description": "Analyze crash dumps from affected devices",
+            "CreatedAt": -12
+          },
+          {
+            "ChangeHash": "debug-crash-3",
+            "Name": "Identify null pointer source",
+            "Description": "Find code path causing null pointer exception",
+            "CreatedAt": -11
+          },
+          {
+            "ChangeHash": "debug-crash-4",
+            "Name": "Add null checks",
+            "Description": "Add defensive null checks in startup flow",
+            "CreatedAt": -10
+          },
+          {
+            "ChangeHash": "manifest-compat-1",
+            "Name": "Check manifest compatibility",
+            "Description": "Verify Android manifest is compatible with API 31+",
+            "CreatedAt": -9
+          },
+          {
+            "ChangeHash": "manifest-compat-2",
+            "Name": "Update permissions",
+            "Description": "Update permissions for Android 12 requirements",
+            "CreatedAt": -8
+          },
+          {
+            "ChangeHash": "startup-init-1",
+            "Name": "Refactor startup initialization",
+            "Description": "Refactor startup logic to handle edge cases",
+            "CreatedAt": -7
+          },
+          {
+            "ChangeHash": "startup-init-2",
+            "Name": "Add lifecycle logging",
+            "Description": "Add comprehensive logging to startup lifecycle",
+            "CreatedAt": -6
+          },
+          {
+            "ChangeHash": "battery-amber-19",
+            "Name": "Fix null pointer in startup service",
+            "Description": "Guard against null return from persisted session service",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-2",
+            "Name": "Add session validation",
+            "Description": "Validate session data before using it",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-3",
+            "Name": "Add fallback handler",
+            "Description": "Implement fallback for invalid session data",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-4",
+            "Name": "Add exception tracing",
+            "Description": "Add detailed exception tracing for debugging",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-5",
+            "Name": "Add safety checks",
+            "Description": "Add safety checks throughout startup",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-6",
+            "Name": "Add emergency recovery",
+            "Description": "Implement emergency recovery path if startup fails",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-7",
+            "Name": "Add startup timeouts",
+            "Description": "Add timeouts to prevent infinite waits",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "fix-crash-8",
+            "Name": "Add watchdog monitoring",
+            "Description": "Add watchdog to detect startup hangs",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "test-android12-1",
+            "Name": "Test on Android 12 device",
+            "Description": "Comprehensive testing on physical Android 12 devices",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "test-android12-2",
+            "Name": "Test cold start scenarios",
+            "Description": "Test multiple cold start scenarios",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "test-android12-3",
+            "Name": "Test with various apps open",
+            "Description": "Test with different background app states",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "final-release-1",
+            "Name": "Release fix to production",
+            "Description": "Roll out fix to all users",
+            "CreatedAt": 0
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Slow balance updates",
+        "Description": "Balance refresh takes too long after transactions",
+        "Severity": "Medium",
+        "Status": "Investigating",
+        "LastUpdated": -5,
+        "CreatedAt": -25,
+        "Changes": [
+          {
+            "ChangeHash": "profile-api-1",
+            "Name": "Profile balance API",
+            "Description": "Profile API calls to identify bottlenecks",
+            "CreatedAt": -23
+          },
+          {
+            "ChangeHash": "profile-api-2",
+            "Name": "Analyze query performance",
+            "Description": "Analyze database query performance",
+            "CreatedAt": -22
+          },
+          {
+            "ChangeHash": "db-index-1",
+            "Name": "Add database indexes",
+            "Description": "Add indexes to balance query tables",
+            "CreatedAt": -20
+          },
+          {
+            "ChangeHash": "db-index-2",
+            "Name": "Optimize existing indexes",
+            "Description": "Review and optimize existing database indexes",
+            "CreatedAt": -19
+          },
+          {
+            "ChangeHash": "db-index-3",
+            "Name": "Add composite indexes",
+            "Description": "Create composite indexes for complex queries",
+            "CreatedAt": -18
+          },
+          {
+            "ChangeHash": "cache-layer-1",
+            "Name": "Implement multi-level caching",
+            "Description": "Add client-side and server-side caching layers",
+            "CreatedAt": -8
+          },
+          {
+            "ChangeHash": "cache-layer-2",
+            "Name": "Add Redis caching",
+            "Description": "Integrate Redis for distributed cache",
+            "CreatedAt": -7
+          },
+          {
+            "ChangeHash": "cache-strategy-1",
+            "Name": "Implement cache invalidation",
+            "Description": "Implement proper cache invalidation on transactions",
+            "CreatedAt": -5
+          },
+          {
+            "ChangeHash": "cache-strategy-2",
+            "Name": "Test cache invalidation",
+            "Description": "Test cache invalidation scenarios",
+            "CreatedAt": -4
+          },
+          {
+            "ChangeHash": "swift-ledger-33",
+            "Name": "Optimize balance caching",
+            "Description": "Improve caching strategy and reduce unnecessary network calls",
+            "CreatedAt": -2
+          },
+          {
+            "ChangeHash": "async-fetch-1",
+            "Name": "Implement async balance fetch",
+            "Description": "Fetch balance asynchronously to not block UI",
+            "CreatedAt": -6
+          },
+          {
+            "ChangeHash": "async-fetch-2",
+            "Name": "Add loading indicators",
+            "Description": "Show loading state while fetching balance",
+            "CreatedAt": -5
+          },
+          {
+            "ChangeHash": "load-test-1",
+            "Name": "Load test balance API",
+            "Description": "Test API under high load",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "load-test-2",
+            "Name": "Stress test with concurrent requests",
+            "Description": "Test with many simultaneous balance requests",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "monitor-perf-1",
+            "Name": "Add balance update monitoring",
+            "Description": "Monitor balance update response times",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "monitor-perf-2",
+            "Name": "Set up alerts for slow updates",
+            "Description": "Alert when balance updates exceed threshold",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "query-opt-1",
+            "Name": "Optimize balance queries",
+            "Description": "Rewrite slow database queries",
+            "CreatedAt": -9
+          },
+          {
+            "ChangeHash": "query-opt-2",
+            "Name": "Add query explain analysis",
+            "Description": "Analyze query execution plans",
+            "CreatedAt": -8
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Card verification failure",
+        "Description": "Credit card verification fails for valid cards from certain banks",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -100,
+        "CreatedAt": -320,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-fail-1",
+            "Name": "Analyze failing banks",
+            "Description": "Identify which banks are causing verification failures",
+            "CreatedAt": -318
+          },
+          {
+            "ChangeHash": "analyze-fail-2",
+            "Name": "Review BIN data",
+            "Description": "Review Bank Identification Number ranges",
+            "CreatedAt": -316
+          },
+          {
+            "ChangeHash": "analyze-fail-3",
+            "Name": "Check issuer database",
+            "Description": "Verify card issuer database is up to date",
+            "CreatedAt": -314
+          },
+          {
+            "ChangeHash": "verify-card-44",
+            "Name": "Update card validation rules",
+            "Description": "Add support for new BIN ranges and issuer formats",
+            "CreatedAt": -315
+          },
+          {
+            "ChangeHash": "bin-update-1",
+            "Name": "Update BIN database",
+            "Description": "Update with latest BIN information",
+            "CreatedAt": -313
+          },
+          {
+            "ChangeHash": "bin-update-2",
+            "Name": "Add issuer configuration",
+            "Description": "Add specific configurations for problem banks",
+            "CreatedAt": -312
+          },
+          {
+            "ChangeHash": "bin-update-3",
+            "Name": "Validate BIN ranges",
+            "Description": "Validate BIN ranges against live test cards",
+            "CreatedAt": -311
+          },
+          {
+            "ChangeHash": "bank-support-88",
+            "Name": "Add retry logic for bank communication",
+            "Description": "Implement exponential backoff for bank API calls",
+            "CreatedAt": -310
+          },
+          {
+            "ChangeHash": "api-timeout-1",
+            "Name": "Adjust API timeout",
+            "Description": "Increase timeout for slower bank APIs",
+            "CreatedAt": -308
+          },
+          {
+            "ChangeHash": "api-timeout-2",
+            "Name": "Add fallback verification",
+            "Description": "Use alternative verification method if primary fails",
+            "CreatedAt": -306
+          },
+          {
+            "ChangeHash": "api-timeout-3",
+            "Name": "Implement request queuing",
+            "Description": "Queue bank API requests to prevent flooding",
+            "CreatedAt": -305
+          },
+          {
+            "ChangeHash": "test-cards-1",
+            "Name": "Test with real card data",
+            "Description": "Test verification with actual problem cards",
+            "CreatedAt": -304
+          },
+          {
+            "ChangeHash": "test-cards-2",
+            "Name": "Test with test card numbers",
+            "Description": "Use bank-provided test numbers",
+            "CreatedAt": -303
+          },
+          {
+            "ChangeHash": "test-cards-3",
+            "Name": "Test international cards",
+            "Description": "Test with cards from various countries",
+            "CreatedAt": -302
+          },
+          {
+            "ChangeHash": "contact-banks-1",
+            "Name": "Contact problem banks",
+            "Description": "Reach out to banks about compatibility issues",
+            "CreatedAt": -300
+          },
+          {
+            "ChangeHash": "contact-banks-2",
+            "Name": "Implement bank feedback",
+            "Description": "Implement suggestions from bank technical teams",
+            "CreatedAt": -295
+          },
+          {
+            "ChangeHash": "deploy-fix-1",
+            "Name": "Deploy fix to staging",
+            "Description": "Deploy verification updates to staging",
+            "CreatedAt": -290
+          },
+          {
+            "ChangeHash": "deploy-fix-2",
+            "Name": "Verify in staging",
+            "Description": "Test fix with problem bank cards",
+            "CreatedAt": -285
+          },
+          {
+            "ChangeHash": "monitor-verify-1",
+            "Name": "Monitor verification rates",
+            "Description": "Track verification success rates by bank",
+            "CreatedAt": -275
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Transaction history pagination broken",
+        "Description": "Users cannot load older transactions beyond first 100 results",
+        "Severity": "Medium",
+        "Status": "Investigating",
+        "LastUpdated": -180,
+        "CreatedAt": -250,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-page-1",
+            "Name": "Analyze pagination logic",
+            "Description": "Identify where pagination is failing",
+            "CreatedAt": -248
+          },
+          {
+            "ChangeHash": "analyze-page-2",
+            "Name": "Review cursor implementation",
+            "Description": "Check cursor-based pagination logic",
+            "CreatedAt": -247
+          },
+          {
+            "ChangeHash": "analyze-page-3",
+            "Name": "Check database queries",
+            "Description": "Verify database query for pagination",
+            "CreatedAt": -246
+          },
+          {
+            "ChangeHash": "analyze-page-4",
+            "Name": "Test with sample data",
+            "Description": "Test pagination with various data sets",
+            "CreatedAt": -246
+          },
+          {
+            "ChangeHash": "analyze-page-5",
+            "Name": "Check API response",
+            "Description": "Verify API returns correct pagination tokens",
+            "CreatedAt": -245
+          },
+          {
+            "ChangeHash": "page-scroll-22",
+            "Name": "Fix pagination cursor logic",
+            "Description": "Correct cursor-based pagination implementation",
+            "CreatedAt": -245
+          },
+          {
+            "ChangeHash": "fix-cursor-1",
+            "Name": "Implement offset tracking",
+            "Description": "Track pagination offset correctly",
+            "CreatedAt": -244
+          },
+          {
+            "ChangeHash": "fix-cursor-2",
+            "Name": "Add cursor validation",
+            "Description": "Validate pagination cursors before use",
+            "CreatedAt": -244
+          },
+          {
+            "ChangeHash": "fix-cursor-3",
+            "Name": "Handle edge cases",
+            "Description": "Handle edge cases like empty result sets",
+            "CreatedAt": -244
+          },
+          {
+            "ChangeHash": "fix-cursor-4",
+            "Name": "Add null checks",
+            "Description": "Add defensive null checks in pagination",
+            "CreatedAt": -245
+          },
+          {
+            "ChangeHash": "fix-cursor-5",
+            "Name": "Encode cursor properly",
+            "Description": "Ensure cursor encoding/decoding is correct",
+            "CreatedAt": -243
+          },
+          {
+            "ChangeHash": "test-page-1",
+            "Name": "Unit test pagination logic",
+            "Description": "Create unit tests for pagination",
+            "CreatedAt": -240
+          },
+          {
+            "ChangeHash": "test-page-2",
+            "Name": "Integration test pagination",
+            "Description": "Test pagination end-to-end",
+            "CreatedAt": -238
+          },
+          {
+            "ChangeHash": "test-page-3",
+            "Name": "Test with large datasets",
+            "Description": "Test pagination with 1000+ transactions",
+            "CreatedAt": -236
+          },
+          {
+            "ChangeHash": "deploy-page-1",
+            "Name": "Deploy pagination fix",
+            "Description": "Release pagination fix to production",
+            "CreatedAt": -230
+          },
+          {
+            "ChangeHash": "monitor-page-1",
+            "Name": "Monitor pagination performance",
+            "Description": "Track pagination query performance",
+            "CreatedAt": -220
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Biometric authentication fails after app update",
+        "Description": "Face ID and fingerprint authentication stops working after update",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -140,
+        "CreatedAt": -200,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-bio-1",
+            "Name": "Analyze keychain access",
+            "Description": "Check keychain permissions after update",
+            "CreatedAt": -198
+          },
+          {
+            "ChangeHash": "analyze-bio-2",
+            "Name": "Review biometric API changes",
+            "Description": "Check if OS biometric API changed",
+            "CreatedAt": -197
+          },
+          {
+            "ChangeHash": "analyze-bio-3",
+            "Name": "Test biometric enrollment",
+            "Description": "Test biometric enrollment process",
+            "CreatedAt": -196
+          },
+          {
+            "ChangeHash": "analyze-bio-4",
+            "Name": "Check migration issues",
+            "Description": "Identify data migration problems",
+            "CreatedAt": -195
+          },
+          {
+            "ChangeHash": "bio-auth-55",
+            "Name": "Fix keychain access permissions",
+            "Description": "Update keychain access group configuration for biometric data",
+            "CreatedAt": -195
+          },
+          {
+            "ChangeHash": "fix-keychain-1",
+            "Name": "Update keychain settings",
+            "Description": "Configure keychain for new OS requirements",
+            "CreatedAt": -193
+          },
+          {
+            "ChangeHash": "fix-keychain-2",
+            "Name": "Add fallback keychain",
+            "Description": "Implement fallback keychain access method",
+            "CreatedAt": -192
+          },
+          {
+            "ChangeHash": "secure-store-99",
+            "Name": "Migrate biometric credentials",
+            "Description": "Add migration script for existing biometric enrollments",
+            "CreatedAt": -190
+          },
+          {
+            "ChangeHash": "migrate-bio-1",
+            "Name": "Create migration logic",
+            "Description": "Implement credential migration on app launch",
+            "CreatedAt": -188
+          },
+          {
+            "ChangeHash": "migrate-bio-2",
+            "Name": "Handle migration errors",
+            "Description": "Handle failures during migration gracefully",
+            "CreatedAt": -187
+          },
+          {
+            "ChangeHash": "migrate-bio-3",
+            "Name": "Validate migrated data",
+            "Description": "Verify migrated biometric data is valid",
+            "CreatedAt": -186
+          },
+          {
+            "ChangeHash": "test-bio-1",
+            "Name": "Test on iOS devices",
+            "Description": "Test Face ID on physical iOS devices",
+            "CreatedAt": -184
+          },
+          {
+            "ChangeHash": "test-bio-2",
+            "Name": "Test on Android devices",
+            "Description": "Test fingerprint on physical Android devices",
+            "CreatedAt": -183
+          },
+          {
+            "ChangeHash": "test-bio-3",
+            "Name": "Test after migration",
+            "Description": "Test biometric auth after credential migration",
+            "CreatedAt": -182
+          },
+          {
+            "ChangeHash": "test-bio-4",
+            "Name": "Test enrollment flow",
+            "Description": "Test new biometric enrollment process",
+            "CreatedAt": -181
+          },
+          {
+            "ChangeHash": "deploy-bio-1",
+            "Name": "Deploy biometric fix",
+            "Description": "Release biometric authentication fix",
+            "CreatedAt": -175
+          },
+          {
+            "ChangeHash": "monitor-bio-1",
+            "Name": "Monitor auth success rates",
+            "Description": "Track biometric authentication success rates",
+            "CreatedAt": -165
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Currency conversion showing wrong rates",
+        "Description": "Exchange rates not updating correctly for international transactions",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -80,
+        "CreatedAt": -150,
+        "Changes": [
+          {
+            "ChangeHash": "forex-analyze-1",
+            "Name": "Analyze exchange rate source",
+            "Description": "Identify which exchange rate provider is failing",
+            "CreatedAt": -148
+          },
+          {
+            "ChangeHash": "forex-analyze-2",
+            "Name": "Check rate update frequency",
+            "Description": "Verify how often rates are being updated",
+            "CreatedAt": -146
+          },
+          {
+            "ChangeHash": "forex-analyze-3",
+            "Name": "Compare with market rates",
+            "Description": "Compare app rates with live market rates",
+            "CreatedAt": -144
+          },
+          {
+            "ChangeHash": "forex-analyze-4",
+            "Name": "Check cache validity",
+            "Description": "Verify cached rates are being invalidated",
+            "CreatedAt": -142
+          },
+          {
+            "ChangeHash": "forex-analyze-5",
+            "Name": "Review historical rates",
+            "Description": "Check if historical rates are incorrect",
+            "CreatedAt": -140
+          },
+          {
+            "ChangeHash": "forex-rate-33",
+            "Name": "Switch to real-time exchange rate API",
+            "Description": "Integrate with more reliable exchange rate provider",
+            "CreatedAt": -145
+          },
+          {
+            "ChangeHash": "integrate-api-1",
+            "Name": "Integrate new exchange rate API",
+            "Description": "Add new real-time rate provider integration",
+            "CreatedAt": -143
+          },
+          {
+            "ChangeHash": "integrate-api-2",
+            "Name": "Add API authentication",
+            "Description": "Configure API keys and authentication",
+            "CreatedAt": -141
+          },
+          {
+            "ChangeHash": "cache-rates-1",
+            "Name": "Implement rate caching",
+            "Description": "Cache rates with proper TTL",
+            "CreatedAt": -138
+          },
+          {
+            "ChangeHash": "cache-rates-2",
+            "Name": "Add cache invalidation",
+            "Description": "Invalidate cache on rate updates",
+            "CreatedAt": -136
+          },
+          {
+            "ChangeHash": "cache-rates-3",
+            "Name": "Handle stale rates",
+            "Description": "Gracefully handle stale cached rates",
+            "CreatedAt": -134
+          },
+          {
+            "ChangeHash": "test-forex-1",
+            "Name": "Test major currency pairs",
+            "Description": "Test EUR, GBP, JPY conversions",
+            "CreatedAt": -130
+          },
+          {
+            "ChangeHash": "test-forex-2",
+            "Name": "Test exotic currencies",
+            "Description": "Test less common currency pairs",
+            "CreatedAt": -128
+          },
+          {
+            "ChangeHash": "test-forex-3",
+            "Name": "Test rate volatility",
+            "Description": "Test with rapidly changing rates",
+            "CreatedAt": -125
+          },
+          {
+            "ChangeHash": "deploy-forex-1",
+            "Name": "Deploy rate fix to staging",
+            "Description": "Release to staging for validation",
+            "CreatedAt": -120
+          },
+          {
+            "ChangeHash": "monitor-forex-1",
+            "Name": "Monitor exchange rates",
+            "Description": "Track exchange rate accuracy",
+            "CreatedAt": -105
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Push notification for transactions not sent",
+        "Description": "Users not receiving instant notifications for new transactions",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -50,
+        "CreatedAt": -90,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-notif-1",
+            "Name": "Analyze notification service",
+            "Description": "Check notification service logs",
+            "CreatedAt": -88
+          },
+          {
+            "ChangeHash": "analyze-notif-2",
+            "Name": "Review token registration",
+            "Description": "Check device token registration process",
+            "CreatedAt": -86
+          },
+          {
+            "ChangeHash": "analyze-notif-3",
+            "Name": "Test push delivery",
+            "Description": "Test manual push notification delivery",
+            "CreatedAt": -84
+          },
+          {
+            "ChangeHash": "analyze-notif-4",
+            "Name": "Check rate limiting",
+            "Description": "Verify rate limiting isn't blocking notifications",
+            "CreatedAt": -82
+          },
+          {
+            "ChangeHash": "analyze-notif-5",
+            "Name": "Review message payload",
+            "Description": "Verify notification payload format",
+            "CreatedAt": -80
+          },
+          {
+            "ChangeHash": "notify-instant-77",
+            "Name": "Fix notification service registration",
+            "Description": "Ensure notification tokens are properly registered and updated",
+            "CreatedAt": -85
+          },
+          {
+            "ChangeHash": "fix-token-1",
+            "Name": "Update token registration flow",
+            "Description": "Fix device token registration process",
+            "CreatedAt": -83
+          },
+          {
+            "ChangeHash": "fix-token-2",
+            "Name": "Add token refresh",
+            "Description": "Implement automatic token refresh",
+            "CreatedAt": -81
+          },
+          {
+            "ChangeHash": "fix-token-3",
+            "Name": "Handle token expiry",
+            "Description": "Handle expired device tokens gracefully",
+            "CreatedAt": -79
+          },
+          {
+            "ChangeHash": "priority-push-11",
+            "Name": "Set high priority for transaction notifications",
+            "Description": "Configure notifications as time-sensitive for immediate delivery",
+            "CreatedAt": -80
+          },
+          {
+            "ChangeHash": "priority-push-2",
+            "Name": "Add wake lock for notifications",
+            "Description": "Ensure device wakes for critical notifications",
+            "CreatedAt": -78
+          },
+          {
+            "ChangeHash": "priority-push-3",
+            "Name": "Enable delivery confirmations",
+            "Description": "Request delivery confirmations from push service",
+            "CreatedAt": -76
+          },
+          {
+            "ChangeHash": "test-notif-1",
+            "Name": "Test iOS push notifications",
+            "Description": "Test APNs push delivery on iOS",
+            "CreatedAt": -74
+          },
+          {
+            "ChangeHash": "test-notif-2",
+            "Name": "Test Android push notifications",
+            "Description": "Test FCM push delivery on Android",
+            "CreatedAt": -72
+          },
+          {
+            "ChangeHash": "test-notif-3",
+            "Name": "Test with various network conditions",
+            "Description": "Test push delivery on slow networks",
+            "CreatedAt": -70
+          },
+          {
+            "ChangeHash": "deploy-notif-1",
+            "Name": "Deploy notification fix",
+            "Description": "Release notification fix to production",
+            "CreatedAt": -65
+          },
+          {
+            "ChangeHash": "monitor-notif-1",
+            "Name": "Monitor notification delivery rates",
+            "Description": "Track push notification delivery success",
+            "CreatedAt": -55
+          },
+          {
+            "ChangeHash": "monitor-notif-2",
+            "Name": "Set up delivery alerts",
+            "Description": "Alert on low notification delivery rates",
+            "CreatedAt": -52
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Split payment feature calculating wrong amounts",
+        "Description": "Bill splitting with multiple users shows incorrect per-person amounts",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -30,
+        "CreatedAt": -60,
+        "Changes": [
+          {
+            "ChangeHash": "analyze-split-1",
+            "Name": "Analyze split calculation logic",
+            "Description": "Review split calculation algorithm",
+            "CreatedAt": -58
+          },
+          {
+            "ChangeHash": "analyze-split-2",
+            "Name": "Test with various amounts",
+            "Description": "Test split with odd numbers and large amounts",
+            "CreatedAt": -56
+          },
+          {
+            "ChangeHash": "analyze-split-3",
+            "Name": "Check rounding method",
+            "Description": "Verify rounding method used in calculations",
+            "CreatedAt": -54
+          },
+          {
+            "ChangeHash": "split-math-66",
+            "Name": "Fix rounding in split calculation",
+            "Description": "Handle cent remainders properly when splitting odd amounts",
+            "CreatedAt": -55
+          },
+          {
+            "ChangeHash": "fix-split-1",
+            "Name": "Implement banker's rounding",
+            "Description": "Use banker's rounding for consistent results",
+            "CreatedAt": -53
+          },
+          {
+            "ChangeHash": "fix-split-2",
+            "Name": "Add decimal precision",
+            "Description": "Use high-precision decimal arithmetic",
+            "CreatedAt": -51
+          },
+          {
+            "ChangeHash": "fix-split-3",
+            "Name": "Handle remainder distribution",
+            "Description": "Distribute remainder cents to participants fairly",
+            "CreatedAt": -50
+          },
+          {
+            "ChangeHash": "equal-share-44",
+            "Name": "Add validation for split totals",
+            "Description": "Ensure split amounts always sum to original total",
+            "CreatedAt": -50
+          },
+          {
+            "ChangeHash": "equal-share-2",
+            "Name": "Add amount verification",
+            "Description": "Verify each share amount before saving",
+            "CreatedAt": -48
+          },
+          {
+            "ChangeHash": "equal-share-3",
+            "Name": "Implement validation rules",
+            "Description": "Create comprehensive validation rules for splits",
+            "CreatedAt": -46
+          },
+          {
+            "ChangeHash": "test-split-1",
+            "Name": "Test 2-person splits",
+            "Description": "Test splitting between 2 people",
+            "CreatedAt": -44
+          },
+          {
+            "ChangeHash": "test-split-2",
+            "Name": "Test 3-person splits",
+            "Description": "Test splitting between 3 people",
+            "CreatedAt": -42
+          },
+          {
+            "ChangeHash": "test-split-3",
+            "Name": "Test multi-person splits",
+            "Description": "Test splitting with 5+ people",
+            "CreatedAt": -40
+          },
+          {
+            "ChangeHash": "test-split-4",
+            "Name": "Test edge cases",
+            "Description": "Test with $0.01 and very large amounts",
+            "CreatedAt": -38
+          },
+          {
+            "ChangeHash": "deploy-split-1",
+            "Name": "Deploy split fix to staging",
+            "Description": "Release to staging for validation",
+            "CreatedAt": -35
+          },
+          {
+            "ChangeHash": "deploy-split-2",
+            "Name": "Release to production",
+            "Description": "Roll out split calculation fix",
+            "CreatedAt": -32
+          },
+          {
+            "ChangeHash": "monitor-split-1",
+            "Name": "Monitor split accuracy",
+            "Description": "Track split calculation accuracy",
+            "CreatedAt": -25
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "GoAir",
+    "CreatedAt": -365,
+    "issues": [
+      {
+        "Name": "Booking date mismatch in confirmation email",
+        "Description": "Confirmation emails show a different travel date than booking page",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -2,
+        "CreatedAt": -18,
+        "Changes": [
+          {
+            "ChangeHash": "paper-plane-77",
+            "Name": "Fix timezone formatting in email template",
+            "Description": "Ensure template uses booking UTC time and formats to user timezone correctly",
+            "CreatedAt": -5
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Seat assignment not persisted",
+        "Description": "Selected seats are not saved for some bookings made via API",
+        "Severity": "Medium",
+        "Status": "Investigating",
+        "LastUpdated": -1,
+        "CreatedAt": -22,
+        "Changes": [
+          {
+            "ChangeHash": "blue-runway-08",
+            "Name": "Fix transactional save for seat assignments",
+            "Description": "Wrap seat selection and reservation in a single transaction",
+            "CreatedAt": -3
+          },
+          {
+            "ChangeHash": "silent-tarmac-60",
+            "Name": "Add API contract validation",
+            "Description": "Validate incoming payloads to prevent missing seat fields",
+            "CreatedAt": -2
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Push notifications not delivered to EU users",
+        "Description": "Push notifications fail for users located in certain EU regions",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -3,
+        "CreatedAt": -10,
+        "Changes": [
+          {
+            "ChangeHash": "north-star-14",
+            "Name": "Update push provider config",
+            "Description": "Switch to regional endpoints and refresh API credentials",
+            "CreatedAt": -4
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Flight search results showing sold out flights",
+        "Description": "Search results include flights with no available seats",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -200,
+        "CreatedAt": -330,
+        "Changes": [
+          {
+            "ChangeHash": "filter-available-88",
+            "Name": "Add availability filter to search query",
+            "Description": "Filter out flights with zero available seats from search results",
+            "CreatedAt": -325
+          },
+          {
+            "ChangeHash": "real-time-seats-33",
+            "Name": "Implement real-time seat availability",
+            "Description": "Connect to live inventory system for accurate seat counts",
+            "CreatedAt": -320
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Baggage allowance calculation incorrect",
+        "Description": "System shows wrong baggage allowance for international flights",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -150,
+        "CreatedAt": -280,
+        "Changes": [
+          {
+            "ChangeHash": "baggage-rules-55",
+            "Name": "Update international baggage rules",
+            "Description": "Sync with latest IATA baggage allowance guidelines",
+            "CreatedAt": -275
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Check-in not opening 24 hours before flight",
+        "Description": "Online check-in opens later than expected for some routes",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -120,
+        "CreatedAt": -220,
+        "Changes": [
+          {
+            "ChangeHash": "checkin-time-99",
+            "Name": "Fix timezone calculation for check-in window",
+            "Description": "Calculate check-in availability using departure airport timezone",
+            "CreatedAt": -215
+          },
+          {
+            "ChangeHash": "schedule-job-44",
+            "Name": "Add monitoring for check-in scheduler",
+            "Description": "Alert when check-in jobs fail to trigger on time",
+            "CreatedAt": -210
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Loyalty points not credited after flight",
+        "Description": "Frequent flyer points missing from account after completed flights",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -80,
+        "CreatedAt": -180,
+        "Changes": [
+          {
+            "ChangeHash": "points-credit-77",
+            "Name": "Fix points crediting batch job",
+            "Description": "Correct logic error in nightly points processing script",
+            "CreatedAt": -175
+          },
+          {
+            "ChangeHash": "retroactive-points-22",
+            "Name": "Backfill missing points",
+            "Description": "Credit points for all affected flights in past 60 days",
+            "CreatedAt": -170
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Mobile boarding pass QR code not scanning",
+        "Description": "Gate scanners unable to read mobile boarding pass QR codes",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -50,
+        "CreatedAt": -120,
+        "Changes": [
+          {
+            "ChangeHash": "qr-format-66",
+            "Name": "Update QR code encoding format",
+            "Description": "Switch to higher error correction level and standard format",
+            "CreatedAt": -115
+          },
+          {
+            "ChangeHash": "brightness-boost-11",
+            "Name": "Increase QR code display brightness",
+            "Description": "Set maximum screen brightness when boarding pass is displayed",
+            "CreatedAt": -110
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Flight status updates delayed",
+        "Description": "Passengers not receiving timely notifications about delays or gate changes",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -30,
+        "CreatedAt": -90,
+        "Changes": [
+          {
+            "ChangeHash": "status-poll-33",
+            "Name": "Increase flight status polling frequency",
+            "Description": "Poll flight status API every 2 minutes instead of 10",
+            "CreatedAt": -85
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Group booking price mismatch",
+        "Description": "Total price shown differs from sum of individual passenger prices in group bookings",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -20,
+        "CreatedAt": -60,
+        "Changes": [
+          {
+            "ChangeHash": "group-price-88",
+            "Name": "Fix group discount calculation",
+            "Description": "Apply group discount after summing base fares, not before",
+            "CreatedAt": -55
+          },
+          {
+            "ChangeHash": "tax-split-44",
+            "Name": "Correct tax allocation in group bookings",
+            "Description": "Distribute taxes proportionally across all passengers",
+            "CreatedAt": -50
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "EduLearn",
+    "CreatedAt": -180,
+    "issues": [
+      {
+        "Name": "Video playback stuttering on mobile",
+        "Description": "Course videos buffer frequently and stutter on mobile devices",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -2,
+        "CreatedAt": -15,
+        "Changes": [
+          {
+            "ChangeHash": "video-buffer-77",
+            "Name": "Implement adaptive bitrate streaming",
+            "Description": "Add HLS streaming with multiple quality levels based on bandwidth",
+            "CreatedAt": -10
+          },
+          {
+            "ChangeHash": "cdn-optimize-44",
+            "Name": "Optimize CDN configuration",
+            "Description": "Configure edge caching and compression for video content",
+            "CreatedAt": -5
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Quiz answers not saving",
+        "Description": "Student quiz responses occasionally lost when submitting",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -5,
+        "CreatedAt": -30,
+        "Changes": [
+          {
+            "ChangeHash": "quiz-save-99",
+            "Name": "Add auto-save for quiz progress",
+            "Description": "Save answers after each question instead of on final submit",
+            "CreatedAt": -25
+          },
+          {
+            "ChangeHash": "retry-submit-33",
+            "Name": "Implement submission retry logic",
+            "Description": "Retry failed submissions with exponential backoff",
+            "CreatedAt": -20
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Course progress not syncing across devices",
+        "Description": "Students see different completion status on different devices",
+        "Severity": "Medium",
+        "Status": "Investigating",
+        "LastUpdated": -10,
+        "CreatedAt": -60,
+        "Changes": [
+          {
+            "ChangeHash": "sync-progress-55",
+            "Name": "Implement real-time progress sync",
+            "Description": "Use WebSocket to sync progress updates across all active sessions",
+            "CreatedAt": -55
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Assignment submission deadline confusion",
+        "Description": "Students confused by timezone differences in assignment deadlines",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -40,
+        "CreatedAt": -90,
+        "Changes": [
+          {
+            "ChangeHash": "timezone-display-88",
+            "Name": "Show deadlines in student's local timezone",
+            "Description": "Display all deadlines with timezone indicator and countdown timer",
+            "CreatedAt": -85
+          },
+          {
+            "ChangeHash": "grace-period-22",
+            "Name": "Add 1-hour grace period notification",
+            "Description": "Send reminder notification 1 hour before deadline",
+            "CreatedAt": -80
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Discussion forum search not working",
+        "Description": "Forum search returns no results even for known existing posts",
+        "Severity": "Medium",
+        "Status": "Investigating",
+        "LastUpdated": -70,
+        "CreatedAt": -120,
+        "Changes": [
+          {
+            "ChangeHash": "search-index-66",
+            "Name": "Rebuild forum search index",
+            "Description": "Recreate search index with proper text analyzers",
+            "CreatedAt": -115
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Certificate generation fails for completed courses",
+        "Description": "Students unable to download completion certificates",
+        "Severity": "Critical",
+        "Status": "Fixed",
+        "LastUpdated": -100,
+        "CreatedAt": -150,
+        "Changes": [
+          {
+            "ChangeHash": "cert-template-44",
+            "Name": "Fix PDF certificate generation",
+            "Description": "Update certificate template engine to handle special characters",
+            "CreatedAt": -145
+          },
+          {
+            "ChangeHash": "queue-certs-99",
+            "Name": "Move certificate generation to background queue",
+            "Description": "Process certificate requests asynchronously to prevent timeouts",
+            "CreatedAt": -140
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Live class video quality poor",
+        "Description": "Instructor video appears pixelated during live sessions",
+        "Severity": "Critical",
+        "Status": "Investigating",
+        "LastUpdated": -130,
+        "CreatedAt": -170,
+        "Changes": [
+          {
+            "ChangeHash": "video-quality-77",
+            "Name": "Increase default video bitrate",
+            "Description": "Raise minimum bitrate for instructor camera feed",
+            "CreatedAt": -165
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      },
+      {
+        "Name": "Student enrollment not showing in instructor dashboard",
+        "Description": "New student enrollments delayed in appearing on instructor's course roster",
+        "Severity": "Medium",
+        "Status": "Fixed",
+        "LastUpdated": -155,
+        "CreatedAt": -175,
+        "Changes": [
+          {
+            "ChangeHash": "enrollment-cache-33",
+            "Name": "Fix roster cache invalidation",
+            "Description": "Invalidate instructor dashboard cache on new enrollments",
+            "CreatedAt": -170
+          }
+        ],
+        "Media": [
+          {
+            "Title": "Test Image",
+            "Description": "Test Image",
+            "MediaType": "image",
+            "Path": "Data/Media/testImage.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]
